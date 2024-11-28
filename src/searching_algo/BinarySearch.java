@@ -14,6 +14,13 @@ public class BinarySearch {
         else{
             System.out.println("Target not found in array.");
         }
+
+        int result1 = searching(arr, targetVal, left, right);
+
+        if (result != -1)
+            System.out.println("Value " + targetVal+ " found at index "+ result1);
+        else
+            System.out.println("Target not found in array.");
     }
 
 
@@ -32,6 +39,21 @@ public class BinarySearch {
         else{
             return search(arr, val, mid+1, right);
         }
+    }
+
+    static int searching(int arr[], int val, int left, int right){
+        int result = -1;
+        while (left<=right) {
+            int midVal = left + (right - left) / 2;
+            if (val == arr[midVal]){
+                return  midVal;
+            }else if (val > arr[midVal]){
+                left = midVal+1;
+            }else {
+                right = midVal - 1;
+            }
+        }
+        return  result;
     }
 
 }
