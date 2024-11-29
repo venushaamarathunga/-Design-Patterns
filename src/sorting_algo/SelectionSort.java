@@ -21,7 +21,6 @@ public class SelectionSort {
             int temp = arr[i];
             arr[i] = arr[min_index];
             arr[min_index] = temp;
-
         }
     }
 
