@@ -12,7 +12,6 @@ public class QuickSort {
     static int partition(int[] arr,int low,int high){
         int pivot = arr[high];
         int i = low-1;
-
         for (int j = low; j < high; j++) {
             if(arr[j] < pivot){
                 i++;
@@ -22,13 +21,11 @@ public class QuickSort {
         swap(arr, i+1, high);
         return i+1;
     }
-
     static void swap(int[] arr, int i, int j){
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
     static void sorting(int[] arr, int low, int high){
         if(low < high){
             int par = partition(arr, low,high);
@@ -37,6 +34,7 @@ public class QuickSort {
             sorting(arr,par+1, high);
         }
     }
+
     static void SortedArrayPrint(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
